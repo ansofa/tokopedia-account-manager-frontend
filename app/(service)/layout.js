@@ -1,4 +1,4 @@
-import "./globals.css"
+import "../globals.css"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
@@ -27,7 +27,7 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({children}) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
