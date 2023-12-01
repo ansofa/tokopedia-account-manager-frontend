@@ -35,6 +35,7 @@ export default function Login() {
   const loginSubmit = async (data) => {
     setIsLoading(true);
     const response = await login(data);
+    console.log(data);
     if (response.accessToken) {
       setCookie("accessToken", response.accessToken, {
         expires: 1,
