@@ -8,6 +8,22 @@ const auth = axios.create({
 
 const accessToken = getCookie('accessToken')
 
+export const postRegistration = async ({
+    username, email, password, confPassword
+}) => {
+    try {
+        const response = await auth.post('/auth/users',{
+            username,
+            email,
+            password,
+            confPassword
+        })
+        return response.data;
+    } catch (error) {
+        return error.response.data
+    }
+}
+
 export const login = async ({ email, password }) => {
     try {
         const response = await auth.post('/auth/login', { email, password })
