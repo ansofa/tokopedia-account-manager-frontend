@@ -19,11 +19,9 @@ export function UserNav() {
 
   const logoutSubmit = async () => {
     setIsLoading(true);
-    const response = await logout();
-    if (response.status === "SUCCESS") {
-      removeCookie("accessToken");
-      router.push("/login");
-    }
+    await logout();
+    removeCookie("accessToken");
+    router.push("/login");
     setIsLoading(false);
   };
 

@@ -100,6 +100,9 @@ export default function Login() {
               </CardFooter>
             </form>
           </Form>
+          <div className="my-4">
+          <CardDescription className="text-center">Enter your email below for login into your account</CardDescription>
+          </div>
         </Card>
       </div>
   );
