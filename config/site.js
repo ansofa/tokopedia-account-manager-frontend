@@ -8,8 +8,8 @@ export const siteConfig = {
       href: "/",
     },
     {
-      title: "Profile",
-      href: "/profile",
+      title: "Input Profile",
+      href: "/input",
     }
   ],
   links: {

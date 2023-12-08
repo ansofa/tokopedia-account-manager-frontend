@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { ButtonLoading } from "@/components/button-loading";
+import { useRouter } from "next/navigation";
 
 export default function Profile() {
   const [allProfiles, setAllProfiles] = useState(null);
@@ -20,13 +21,18 @@ export default function Profile() {
   const [isLoading, setIsLoading] = useState(false);
   const [triggerFetch, setTriggerFetch] = useState(false);
 
+  const router = useRouter();
+
   const deleteSubmit = async (profileId) => {
     setIsLoading(true);
-    console.log(JSON.stringify(allProfiles));
     await deleteProfile(profileId);
     setIsLoading(false);
     setTriggerFetch(true);
     setShowDelete(false);
+  };
+
+  const transaction = async (profileId) => {
+    router.push(`/transaction/${profileId}`);
   };
 
   useEffect(() => {
@@ -68,6 +74,7 @@ export default function Profile() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-auto" align="end" forceMount>
                   <DropdownMenuItem onSelect={() => setShowDelete(true)}>Delete</DropdownMenuItem>
+                  <DropdownMenuItem onSelect={() => transaction(profile.data.id)}>Transaction</DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
               <AlertDialog open={showDelete} onOpenChange={setShowDelete}>

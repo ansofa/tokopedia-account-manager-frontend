@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { ButtonLoading } from "@/components/button-loading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -47,59 +48,59 @@ export default function Login() {
     setIsLoading(false);
   };
   return (
-    <div className="flex items-center justify-center h-screen">
-      <Card className="w-full max-w-sm">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-center">Sign In</CardTitle>
-          <CardDescription className="text-center">Enter your email below for login into your account</CardDescription>
-        </CardHeader>
-        {responseError && <div className="text-red-500 text-sm text-center mb-4">{responseError}</div>}
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(loginSubmit)} className="space-y-8">
-            <CardContent className="grid gap-4">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <div className="grid gap-2">
-                      <Label>Email</Label>
-                      <FormControl>
-                        <Input id="email" type="email" placeholder="m@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </div>
-                  </FormItem>
+      <div className="flex items-center justify-center h-screen">
+        <Card className="w-full max-w-sm">
+          <CardHeader className="space-y-1">
+            <CardTitle className="text-center">Sign In</CardTitle>
+            <CardDescription className="text-center">Enter your email below for login into your account</CardDescription>
+          </CardHeader>
+          {responseError && <div className="text-red-500 text-sm text-center mb-4">{responseError}</div>}
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(loginSubmit)} className="space-y-8">
+              <CardContent className="grid gap-4">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <div className="grid gap-2">
+                        <Label>Email</Label>
+                        <FormControl>
+                          <Input id="email" type="email" placeholder="m@example.com" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </div>
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="password"
+                  render={({ field }) => (
+                    <FormItem>
+                      <div className="grid gap-2">
+                        <Label>Password</Label>
+                        <FormControl>
+                          <Input id="password" type="password" placeholder="******" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </div>
+                    </FormItem>
+                  )}
+                />
+              </CardContent>
+              <CardFooter>
+                {isLoading ? (
+                  <ButtonLoading classNameLoading="w-full" />
+                ) : (
+                  <Button type="submit" className="w-full">
+                    Login
+                  </Button>
                 )}
-              />
-              <FormField
-                control={form.control}
-                name="password"
-                render={({ field }) => (
-                  <FormItem>
-                    <div className="grid gap-2">
-                      <Label>Password</Label>
-                      <FormControl>
-                        <Input id="password" type="password" placeholder="******" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </div>
-                  </FormItem>
-                )}
-              />
-            </CardContent>
-            <CardFooter>
-              {isLoading ? (
-                <ButtonLoading classNameLoading="w-full" />
-              ) : (
-                <Button type="submit" className="w-full">
-                  Login
-                </Button>
-              )}
-            </CardFooter>
-          </form>
-        </Form>
-      </Card>
-    </div>
+              </CardFooter>
+            </form>
+          </Form>
+        </Card>
+      </div>
   );
 }
