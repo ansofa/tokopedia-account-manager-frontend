@@ -7,6 +7,19 @@ const profile = axios.create({
 
 const accessToken = getCookie('accessToken')
 
+export const storeProfile = async (bearer) => {
+    try {
+        const response =  await profile.post('/services/tokopedia/profiles', bearer, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        });
+        return response.data
+    } catch (error) {
+        return error.response.data
+    }
+}
+
 export const getAllProfile = async () => {
     try {
         const response = await profile.get('/services/tokopedia/profiles', {

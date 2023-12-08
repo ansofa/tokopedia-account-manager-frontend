@@ -12,7 +12,7 @@ import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { ButtonLoading } from "@/components/button-loading";
 
-export default function Profile() {
+export default function Home() {
   const [allProfiles, setAllProfiles] = useState(null);
   const [loadingSkeleton, setLoadingSkeleton] = useState(true);
   const [loaderTotal, setLoaderTotal] = useState([]);
