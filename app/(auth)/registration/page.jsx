@@ -1,6 +1,5 @@
 "use client"
 
-
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -13,6 +12,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { postRegistration } from "@/rest/auth"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
@@ -104,6 +104,9 @@ export default function Registration() {
         <CardFooter>
           <Button onClick={serviceRegistration} className="w-full">Registration</Button>
         </CardFooter>
+        <div className="my-4">
+          <CardDescription className="text-center">Already have an account? <Link className="text-blue-500" href="/login">Sign In</Link></CardDescription>
+          </div>
       </Card>
     </div>
   )

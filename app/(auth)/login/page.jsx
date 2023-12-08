@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { ButtonLoading } from "@/components/button-loading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import Link from "next/link";
 
 const FormSchema = z.object({
   email: z.string().email({ message: "Invalid email" }),
@@ -101,7 +101,7 @@ export default function Login() {
             </form>
           </Form>
           <div className="my-4">
-          <CardDescription className="text-center">Enter your email below for login into your account</CardDescription>
+          <CardDescription className="text-center">Dont have an account? <Link className="text-blue-500" href="/registration">Sign Up</Link></CardDescription>
           </div>
         </Card>
       </div>
