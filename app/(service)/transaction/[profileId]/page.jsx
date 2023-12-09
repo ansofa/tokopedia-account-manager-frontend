@@ -34,6 +34,7 @@ export default function Transaction({params}) {
           </TableRow>
         </TableHeader>
         <TableBody>
+          {/* buat ke komponent terpisah */}
           {transactionList.map((transaction) => (
             <TableRow key={transaction.orderUUID}>
               <TableCell>{transaction.transactionDate}</TableCell>
