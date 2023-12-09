@@ -40,6 +40,7 @@ export default function Transaction({params}) {
               <TableCell className="font-medium">{transaction.productName}</TableCell>
               <TableCell className="font-bold">{transaction.totalPrice}</TableCell>
               <TableCell className={`text-[${transaction.status.textColor}]`}>{transaction.status.label}</TableCell>
+              {console.log(transaction)}
             </TableRow>
           ))}
         </TableBody>

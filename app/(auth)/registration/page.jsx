@@ -21,6 +21,7 @@ export default function Registration() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confPassword, setConfPassword] = useState("");
+  const [responseError, setResponseError] = useState(null);
 
   const router = useRouter();
 
@@ -41,6 +42,8 @@ export default function Registration() {
       setTimeout(() => {
         router.push("/login");
       }, 1000)
+    } else {
+      setResponseError(isSuccess.message || "Server error");
     }
   }
 
@@ -53,6 +56,7 @@ export default function Registration() {
             Create your email by filling this section
           </CardDescription>
         </CardHeader>
+        {responseError && <div className="text-red-500 text-sm text-center mb-4">{responseError}</div>}
         <CardContent  className="grid gap-4">
           <div className="grid gap-2">
             <Label htmlFor="full_name">Full Name</Label>
