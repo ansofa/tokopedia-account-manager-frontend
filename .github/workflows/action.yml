@@ -48,7 +48,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd ${{ secrets.VPS_FOLDER }}
-          git pull
+          git pull origin main
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
           npm install
