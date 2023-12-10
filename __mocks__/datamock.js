@@ -9,6 +9,10 @@ module.exports = {
         textprofile: "This action cannot be undone.",
         buttonCencelprofile: "Cancel",
         buttonDeleteprofile: "Delete",
+        textSaldo: "Saldo",
+        textFailed: "FAILED",
+        textData: "Data profil gagal dimuat",
+
 
     },
 
@@ -24,6 +28,18 @@ module.exports = {
         responseError : "Server error"
     },
 
+    registration : {
+        signUp : "Sign Up",
+        description : "Create your email by filling this section",
+        usernameText : "Full Name",
+        usernameForm : "Full Name",
+        emailText : "Email",
+        emailForm : "m@example.com",
+        passwordText : "Password",
+        buttonRegister : "Register",
+
+    },
+
     loadingButton : {
         textLoading : "Please wait",
 
@@ -31,6 +47,23 @@ module.exports = {
 
     themeToggle : {
         textToggle : "Toggle theme",
+
+    },
+
+    input : {
+        textInput : "cookie",
+        inputForm : "input your cookie here",
+        button : "Submit",
+    },
+
+    userNav : {
+        setting : "Setting",
+        logout : "Logout",
+        textLogout : "Apakah anda yakin ingin logout?",
+        textUndone : "This action cannot be undone.",
+        buttonCencel : "Cancel",
+        buttonLogout : "Logout",
+        
 
     }
 }
