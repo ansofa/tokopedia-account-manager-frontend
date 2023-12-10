@@ -10,6 +10,7 @@ import { logout } from "@/rest/auth";
 import { removeCookie } from "@/utils/cookies";
 import { useRouter } from "next/navigation";
 import { ButtonLoading } from "./button-loading";
+import { useEffect } from 'react';
 
 export function UserNav() {
   const { userAuthenticated } = useContext(GlobalContext);
