@@ -37,14 +37,14 @@ jobs:
         path: ./*
         remote_path: "${{ secrets.VPS_FOLDER }}"
         remote_host: "${{ secrets.VPS_HOST }}"
-        remote_user: root
+        remote_user: ansofa
         remote_key: "${{ secrets.SSH_PRIVATE_KEY }}"
 
     - name: SSH into VPS and run commands
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.VPS_HOST }}
-        username: root
+        username: ansofa
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd ${{ secrets.VPS_FOLDER }}
