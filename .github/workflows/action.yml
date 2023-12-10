@@ -49,8 +49,6 @@ jobs:
         script: |
           cd ${{ secrets.VPS_FOLDER }}
           git pull
-          export NVM_DIR=~/.nvm
-          source ~/.nvm/nvm.sh
           npm install
           npm run build
           sudo pm2 delete tkpd-frontend
