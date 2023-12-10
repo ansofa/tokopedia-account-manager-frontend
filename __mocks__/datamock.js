@@ -4,7 +4,7 @@ module.exports = {
         button: "Click Me"
     },
 
-    profile : {
+    home : {
         title : "apakah anda yakin ingin menghapus profile ?",
         textprofile: "This action cannot be undone.",
         buttonCencelprofile: "Cancel",
